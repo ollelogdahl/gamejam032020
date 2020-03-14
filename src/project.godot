@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "AttackClass",
 "language": "GDScript",
 "path": "res://Scripts/Structs/AttackClass.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Entity",
+"language": "GDScript",
+"path": "res://Scripts/Abstracts/Entity.gd"
+}, {
+"base": "Entity",
+"class": "EntityAI",
+"language": "GDScript",
+"path": "res://Scripts/Abstracts/Entity_AI.gd"
 } ]
 _global_script_class_icons={
-"AttackClass": ""
+"AttackClass": "",
+"Entity": "",
+"EntityAI": ""
 }
 
 [application]

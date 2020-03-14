@@ -1,6 +1,7 @@
 extends Node
 
 onready var enemySpawner = $"../EnemyCreator"
+onready var world = $"../"
 
 func createLayoutInstance():
 	var index = int(rand_range(0, Resources.allRooms.size()))
@@ -16,10 +17,16 @@ func generateRoom():
 	var room = createLayoutInstance()
 	add_child(room)
 	
-	Event.emit_signal("focusTilemap", room.tilemap)
+	# move player to spawnpoint in room
+	world.player.global_position = room.enter.global_position
 	
 	populateRoom(room)
+	
+	Event.emit_signal("focusTilemap", room.tilemap)
 
 func _ready() -> void:
+	Event.connect("mainConstructed", self, "onMainReady")
+	
+func onMainReady():
 	randomize()
 	generateRoom()
