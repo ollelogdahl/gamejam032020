@@ -6,6 +6,10 @@
 
 onready var conductor = $"../Conductor"
 
+
+export var movementSpeed = 200
+
+
 var ON_BEAT_MARGIN = 0.2
 var COMBO_MARGIN = 0.1
 
@@ -129,7 +133,14 @@ func _unhandled_input(event):
 		
 
 func _process(delta):
+	# movement
 	
+	var dx = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var dy =  Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	
+	move_and_collide(Vector2(dx, dy).normalized() * movementSpeed * delta)
+	
+	# dumdum
 	time_since_last_beat += delta
 	
 	
@@ -154,9 +165,3 @@ func _process(delta):
 		
 			if mouse_pressed_timings.size() != 0 and last_hit_on_main_beat == false:
 					beat_passed()
-				
-
-	
-	# Process every BPM and update combo
-	Event.emit_signal("playerPosition", global_position)
-	
