@@ -6,7 +6,7 @@ extends Node
 # var a = 2
 # var b = "text"
 
-var attack_dict:Dictionary = {}
+var attacks = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +18,18 @@ func _ready():
 	var result_json:JSONParseResult = JSON.parse(text_json)
 	
 	if result_json.error == OK:
-		attack_dict = result_json.result
+		
+		var attack_dict:Dictionary = result_json.result
+		
+		
+		for attackName in attack_dict.keys():
+			
+			var attackObject:Dictionary = attack_dict.get(attackName)
+			
+			var attack_class = AttackClass.new(attackName, attackObject.combo, attackObject.funcCall)
+			
+			attacks.append(attack_class)
+			
 	else:
 		print("Error code: ", result_json.error)
 		print("Error Line: ", result_json.error_line)

@@ -1,4 +1,19 @@
 {
-  "basicAttack" : [1,1],
-  "coolAttack" : [1,2,1]
+
+  "basicAttack" : {
+
+    "combo" : [1,1],
+    "funcCall" : "fire"
+
+  },
+
+  "coolAttack" : {
+
+    "combo" : [1,2,1],
+    "funcCall" : "ice"
+
+  }
+
+
+
 }
