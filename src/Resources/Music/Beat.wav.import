@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Beat.wav-015642bf88e340bd5d929bf83b75849c.sample"
+
+[deps]
+
+source_file="res://Resources/Music/Beat.wav"
+dest_files=[ "res://.import/Beat.wav-015642bf88e340bd5d929bf83b75849c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
