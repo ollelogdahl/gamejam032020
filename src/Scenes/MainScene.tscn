@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Rooms/Room_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/RoomCreator.gd" type="Script" id=3]
 
 [node name="MainScene" type="Node2D"]
 
@@ -13,6 +13,5 @@ smoothing_enabled = true
 [node name="Player" parent="." instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="RoomManager" type="Node" parent="."]
-
-[node name="Room_1" parent="RoomManager" instance=ExtResource( 3 )]
+[node name="RoomCreator" type="Node" parent="."]
+script = ExtResource( 3 )
