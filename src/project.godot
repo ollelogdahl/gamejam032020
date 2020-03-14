@@ -24,6 +24,7 @@ config/icon="res://Sprites/Icons/icon.png"
 Resources="*res://Scripts/Singletons/Resources.gd"
 Event="*res://Scripts/Singletons/Event.gd"
 Rythm="*res://Scripts/Singletons/Rythm.gd"
+Attacks="*res://Scripts/Singletons/Attacks.gd"
 
 [rendering]
 
