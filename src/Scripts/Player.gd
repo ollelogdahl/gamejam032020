@@ -48,7 +48,6 @@ func _process(delta):
 		
 			
 		attacks_from_last_beat += 1
-		pass
 	
 	if time_passed > last_combo_check + combo_update_offset:
 		print("checks combo")
@@ -62,12 +61,6 @@ func _process(delta):
 			combo.append(attacks_from_last_beat)
 		print(combo)
 		attacks_from_last_beat = 0
-		
-		pass
-	
 	
 	# Process every BPM and update combo
-	
-	
-	
-	pass
+	Event.emit_signal("playerPosition", global_position)
