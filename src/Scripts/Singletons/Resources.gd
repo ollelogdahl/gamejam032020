@@ -1,16 +1,22 @@
 extends Node
 
+var allRooms = []
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+func loadRoomScenes():
+	var dir = Directory.new()
+	if dir.open("res://Scenes/Rooms/") == OK:
+		dir.list_dir_begin()
+		
+		var rn = dir.get_next()
+		while(rn):
+			if rn == ".." or rn == ".":
+				pass
+			else:
+				var path = "res://Scenes/Rooms/%s" % rn
+				allRooms.append( load(path) )
+			
+			rn = dir.get_next()
+		dir.list_dir_end()
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	loadRoomScenes()
