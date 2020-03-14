@@ -7,3 +7,6 @@ signal add_player_attack()
 signal playerPosition(v)
 
 signal mainConstructed()
+
+# Beat events
+signal syncBeatTime()

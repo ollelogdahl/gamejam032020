@@ -38,7 +38,6 @@ func _process(delta):
 		
 	# do screenshake
 	if timer == 0:
-		print("shake ended")
 		set_offset(Vector2())
 		return
 	lastTimer = lastTimer + delta

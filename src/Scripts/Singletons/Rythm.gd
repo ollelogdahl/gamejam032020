@@ -10,7 +10,7 @@ var BPM:int = 130 setget set_BPM
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	set_BPM(101)
+	set_BPM(60)
 	pass # Replace with function body.
 
 
