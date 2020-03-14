@@ -93,6 +93,9 @@ func time_diff(mouse_timings:Array):
 		currentCombo.append(combo_attempted)
 		print("Combo succeded: ", combo_attempted)
 	else:
+		print("combo broke")
+		#if currentCombo != []:
+	#		execute_combo()
 		currentCombo.clear()
 
 func beat_passed():

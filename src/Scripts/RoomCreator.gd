@@ -4,8 +4,8 @@ onready var enemySpawner = $"../EnemyCreator"
 onready var world = $"../"
 
 func createLayoutInstance():
-	var index = int(rand_range(0, Resources.allRooms.size()))
-	var roomScene = Resources.allRooms[index]
+	var index = int(rand_range(0, Resources.level1_rooms.size()))
+	var roomScene = Resources.level1_rooms[index]
 	return roomScene.instance()
 
 func populateRoom(room):
