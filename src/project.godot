@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamejam032020"
+run/main_scene="res://Scenes/MainScene.tscn"
 config/icon="res://Sprites/Icons/icon.png"
 
 [rendering]
