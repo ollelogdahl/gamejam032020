@@ -8,6 +8,7 @@ onready var conductor = $"../Conductor"
 
 
 export var movementSpeed = 200
+var velocity := Vector2(0, 0)
 
 
 var ON_BEAT_MARGIN = 0.2
@@ -135,10 +136,10 @@ func _unhandled_input(event):
 func _process(delta):
 	# movement
 	
-	var dx = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	var dy =  Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	velocity.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	velocity.y =  Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
-	move_and_collide(Vector2(dx, dy).normalized() * movementSpeed * delta)
+	var col = move_and_slide(velocity.normalized() * movementSpeed, Vector2(0, 0))
 	
 	# dumdum
 	time_since_last_beat += delta
