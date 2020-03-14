@@ -2,10 +2,12 @@ extends Node
 
 var allRooms = []
 
+var level1_rooms = []
+
 var wormScene = load("res://Scenes/Enemies/Worm.tscn")
 
 func loadRoomScenes():
-	allRooms = loadScenesFromFolder("res://Scenes/Rooms/")
+	level1_rooms = loadScenesFromFolder("res://Scenes/Rooms/Level_1")
 	
 func loadScenesFromFolder(folder):
 	var l = []
