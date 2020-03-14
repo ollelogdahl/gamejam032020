@@ -1,23 +1,29 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
+var count = 0
+var waitTime
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.wait_time = Rythm.seconds_between_beats
+	waitTime = Rythm.seconds_between_beats
 	$Timer.start()
 	
+	Event.emit_signal("syncBeatTime")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
+var elapsed_time = 0
 func _process(delta):
+	
 	pass
 
 
+func play_sound():
+	$BeatPlayer.play()
 func _on_Timer_timeout():
 	
-	$BeatPlayer.play()
+	
+	
 	pass # Replace with function body.
